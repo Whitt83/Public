@@ -2,10 +2,11 @@
 
 #include <istream>
 #include <fstream>
+#include <iostream>
 /* <string> included in header */
 /* <vector> included in header */
 
-static unsigned int const MAX_BUFFER_SIZE = 1024;
+static unsigned int const MAX_BUFFER_SIZE = 32768;
 
 
 /* We do expect this to be a 'friendly' file.  No trickery */
@@ -18,10 +19,11 @@ bool loadCSVFile(std::string const & inputFile, CSVOutput_t & output, bool const
     std::ifstream inputStream(inputFile.c_str(), std::ifstream::in);
     if (!inputStream.good())
     {
+        std::cerr << "Could not open file!" << std::endl;
         return false;
     }
     /* File is valid and open.  Start reading in & parsing lines */
-    char buffer[1024];
+    char buffer[MAX_BUFFER_SIZE];
     output.clear();
     unsigned int linesRead = 0;
     while (inputStream.good())
@@ -53,6 +55,7 @@ bool loadCSVFile(std::string const & inputFile, CSVOutput_t & output, bool const
             csvRecord.push_back(temporaryString);
         }
         /* split from the final delimiter to the end of the line */
+        std::string const temporaryString = strBuffer.substr(previousPosition);
         csvRecord.push_back(strBuffer.substr(previousPosition));
         /* Finished parsing the line, push the entire row into output */
         output.push_back(csvRecord);
