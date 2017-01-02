@@ -10,9 +10,9 @@ enum class Suit
     Diamonds
 };
 
-enum class Rank
+enum class Rank : uint8_t
 {
-    Two,
+    Two = 2,
     Three,
     Four,
     Five,
@@ -24,10 +24,12 @@ enum class Rank
     Jack,
     Queen,
     King,
-    Ace
+    Ace,
+    INVALID1,
+    INVALID2
 };
 
-
+Rank operator + (Rank lhs, int const & rhs);
 
 class Card
 {

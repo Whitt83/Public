@@ -5,13 +5,15 @@ SET (PRJ_SRC
 	main.cpp
 	card.cpp
 	shoe.cpp
-	side_game_score_keeper.cpp
+	lucky_lady_score_keeper.cpp
+	top_three_score_keeper.cpp
 )
 
 set (PRJ_INC
 	card.hpp
 	shoe.hpp
-	side_game_score_keeper.hpp
+	lucky_lady_score_keeper.hpp
+	top_three_score_keeper.hpp
 )
 
 ADD_DEFINITIONS(-std=c++0x)

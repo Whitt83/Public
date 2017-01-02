@@ -1,6 +1,14 @@
 #include "card.hpp"
 #include <sstream>
 
+
+Rank operator + (Rank lhs, int const & rhs)
+{
+    lhs = static_cast<Rank>(static_cast<int>(lhs) + rhs);
+    return lhs;
+}
+
+
 Card::Card(Suit const suit, Rank const rank)
 : suit_(suit)
 , rank_(rank)
