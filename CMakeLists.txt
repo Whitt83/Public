@@ -12,6 +12,7 @@ if (TARGETPLATFORM  STREQUAL "x86_64-linux")
 	ADD_SUBDIRECTORY(prj/destiny)
 	ADD_SUBDIRECTORY(prj/blackjack)
 	ADD_SUBDIRECTORY(prj/bst)
+	ADD_SUBDIRECTORY(prj/singleton)
 endif()
 
 
