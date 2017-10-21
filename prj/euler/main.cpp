@@ -22,16 +22,6 @@ int main(int argc, char ** argv)
         std::cout << "Found #2 solution in " << solution.iterations_ << " iterations." << std::endl;
         std::cout << "Elapsed Time: (s)" << runTime.count() << std::endl;
     }
-    /* third one is also unknown */
-    {
-        auto const startTime = std::chrono::high_resolution_clock::now();
-        P45::Solution const solution = p45.findNextSolution();
-        auto const endTime = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> runTime = endTime - startTime;
-        std::cout << solution;
-        std::cout << "Found #3 solution in " << solution.iterations_ << " iterations." << std::endl;
-        std::cout << "Elapsed Time: (s)" << runTime.count() << std::endl;
-    }
 
     return 0;
 }
