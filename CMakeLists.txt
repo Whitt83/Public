@@ -11,9 +11,8 @@ if (TARGETPLATFORM  STREQUAL "x64linux")
 	ADD_SUBDIRECTORY(prj/codekata)
 	ADD_SUBDIRECTORY(prj/destiny)
 	ADD_SUBDIRECTORY(prj/blackjack)
-	ADD_SUBDIRECTORY(prj/bst)
 	ADD_SUBDIRECTORY(prj/singleton)
-    ADD_SUBDIRECTORY(prj/euler)
+  ADD_SUBDIRECTORY(prj/euler)
 endif()
 
 
